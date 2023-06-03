@@ -33,11 +33,11 @@
     font-family: arial;
 }
 
-.content {
-    margin-left: 400px 
+​ ​ .content {
+    margin-left: 400px ​
 }
 
-g:hover {
+​ g:hover {
     stroke-linejoin: round;
     fill: #D3D3D3 !important;
     cursor: pointer;
@@ -51,8 +51,4 @@ g:hover {
     stroke: #000000;
     stroke-width: 1.4;
     stroke-linejoin: round;
-}
-#Map-Item {
-    width:300px;
-    margin: 0;
 }
