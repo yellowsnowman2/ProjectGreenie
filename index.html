@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   </head>
   <body>
     <div class="slideshow-container">
@@ -59,9 +61,6 @@
       <span class="dot" onclick="currentSlide(3)"></span>
     </div>
     <div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
       <div id="info-box"></div>
       <div id="content">
         <svg id="mapcenter"
@@ -1215,7 +1214,20 @@
         
         </div>
       </div>
+      <div id="carbon">
+        <form id="carbon_form">
+          <label for = "state">State</label>
+          <input type="text" id="state" name="state" placeholder="state">
+          <label for="unit">Write unit of electricity</label>
+          <input type="text" id="unit" name = "unit" placeholder="unit">
+          <label for="value">amount of electricity</label>
+          <input type="number" id="value" name="value" placeholder="value">
+          <input type="submit">
+        </form>
+        <p id="results"></p>
+      </div>
     </div>
   </body>
   <script src="scripts.js"></script>
+  <script src="carbon.js"></script>
 </html>
