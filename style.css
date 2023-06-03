@@ -172,3 +172,7 @@ g:hover {
     stroke-width: 1.4;
     stroke-linejoin: round;
 }
+#Map-Item {
+    width:300px;
+    margin: 0;
+}
