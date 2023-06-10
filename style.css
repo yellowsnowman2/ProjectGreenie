@@ -172,7 +172,34 @@ g:hover {
     stroke-width: 1.4;
     stroke-linejoin: round;
 }
+
+#logo {
+    width: 180px;
+    height: 80px;
+}
+
 #Map-Item {
     width:300px;
     margin: 0;
+}
+
+.nav-container {
+    display: flex;   
+}
+
+.navbar-collapse {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin: 20px;
 }
