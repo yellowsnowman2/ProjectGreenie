@@ -44,3 +44,5 @@ event.preventDefault();
     })
     .catch(error => console.log('error', error));
 })
+
+const vehicle = document.querySelector('#vehicle_form');
