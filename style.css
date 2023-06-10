@@ -182,3 +182,24 @@ g:hover {
     width:300px;
     margin: 0;
 }
+
+.nav-container {
+    display: flex;   
+}
+
+.navbar-collapse {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
