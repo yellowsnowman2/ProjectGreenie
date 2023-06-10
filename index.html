@@ -10,6 +10,26 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="nav-container">
+        <img id="logo" src="greenie_logo.png" />
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Feature 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Feature 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=# role="button" aria-expanded="false">
+                Feature 3
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="slideshow-container">
       <!-- Full-width images with number and caption text -->
       <div class="mySlides fade">
@@ -1226,8 +1246,16 @@
         </form>
         <p id="results"></p>
       </div>
+      <div id="vehicle">
+        <form id="vehicle_form">
+          <input type="text" id="vehicle_model" placeholder="vehicle model">
+          <input type="number" id="distance_unit">
+          <input type="number" id="distance">
+        </form>
+      </div>
     </div>
   </body>
-  <script src="scripts.js"></script>
-  <script src="carbon.js"></script>
+  <script src="./iqAir.js"></script>
+  <script src="./carbon.js"></script>
+  <script src="./picker.js"></script>
 </html>

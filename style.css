@@ -250,3 +250,8 @@ img {
     align-items: center;
     margin: 20px;
 }
+
+#logo {
+    width: 180px;
+    height: 80px;
+}
