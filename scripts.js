@@ -3,28 +3,32 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showSlides((slideIndex += n));
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  showSlides((slideIndex = n));
 }
 
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 var states = document.getElementsByClassName("state");
 var areas = $.map($(states), function (el) {
@@ -260,7 +264,9 @@ function search(name) {
     .then((data) => {
       console.log(data);
       const template = `
-      <div id="text-ctnr">
+      <div id="title-card">${state_city}, ${state_unabbreviated}</div>
+      <div>
+        <div id="text-ctnr">
         <div id="aqius">Air Quality Index of the United States: ${data.data.current.pollution.aqius}</div>
         <div id="mainus">Main Pollutant of the United States: ${data.data.current.pollution.mainus}</div>
         <div id="humidity">Humidity: ${data.data.current.weather.hu}%</div>
@@ -269,8 +275,9 @@ function search(name) {
         <div id="windspeed">Wind Speed: ${data.data.current.weather.ws} meters/second</div>
         <div id="winddirection">Wind Direction: ${data.data.current.weather.wd} degrees</div>
       </div>
-      <div id="weather_icon">Weather Icon: <img src="https://www.airvisual.com/images/${data.data.current.weather.ic}.png"></img></div>
-
+      <div id="weather_icon">Weather Icon: </div>
+      <div id="weather_image"><img src="https://www.airvisual.com/images/${data.data.current.weather.ic}.png"></img></div>
+      </div>
       
         `;
       document.querySelector("#Map-Item").innerHTML = template;
