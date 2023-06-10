@@ -171,12 +171,6 @@ g:hover {
   stroke-width: 1.4;
   stroke-linejoin: round;
 }
-
-#logo {
-    width: 180px;
-    height: 80px;
-}
-
 #Map-Item {
   width: 300px;
   height: 401px;
