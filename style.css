@@ -171,6 +171,17 @@ g:hover {
   stroke-width: 1.4;
   stroke-linejoin: round;
 }
+
+#space {
+    height: 5px;
+}
+#state_title {
+    font-family: Lexend;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    font-size: x-large;
+}
 #Map-Item {
   width: 300px;
   height: 401px;
@@ -179,13 +190,13 @@ g:hover {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  margin: auto;
+  margin: 40px;
   font-family: monospace;
   color: #9fdca5;
 }
 img {
   width: 300px;
-  height: 210px;
+  height: 200px;
 }
 
 #aqius {
