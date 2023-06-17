@@ -78,15 +78,15 @@ function search(name) {
     IN: "Indianapolis",
     IA: "Des Moines",
     KS: "Topeka",
-    KY: "Frankfort",
+    KY: "Jeffersontown",
     LA: "Baton Rouge",
-    ME: "Augusta",
+    ME: "Rumford",
     MD: "Annapolis",
     MA: "Boston",
     MI: "Lansing",
-    MN: "St. Paul",
+    MN: "Saint Paul",
     MS: "Jackson",
-    MO: "Jefferson City",
+    MO: "Saint Louis",
     MT: "Helena",
     NE: "Lincoln",
     NV: "Carson City",
@@ -106,7 +106,7 @@ function search(name) {
     TN: "Nashville",
     TX: "Austin",
     UT: "Salt Lake City",
-    VT: "Montpelier",
+    VT: "Washington",
     VA: "Richmond",
     WA: "Olympia",
     WV: "Charleston",
@@ -115,28 +115,52 @@ function search(name) {
   };
   const state_unabbreviated = state_dictionary[name];
   const state_city = stateCapitals[name];
-  console.log(state_unabbreviated);
+
+  const iqAirKey1 = "12959be2-9929-4223-8da0-235c21ceb242";
+  const iqAirKey2 = "641a0a1c-7768-4c72-8fa8-b0915b0ff70f";
+  const iqAirKey3 = "f73474b4-eacd-43eb-aa05-a57de4b3b04c";
+  const iqAirKey4 = "0a66e69f-e3d9-4583-a8fb-13df84f88d56";
+  const iqAirKey5 = "355bb222-3ba6-4874-86e7-85e1bddb4afa";
+  const iqAirKey6 = "dd1e1e6e-e734-4b3a-9c44-d43a889d54f3";
+
+  const keys = [
+    iqAirKey1,
+    iqAirKey2,
+    iqAirKey3,
+    iqAirKey4,
+    iqAirKey5,
+    iqAirKey6,
+  ];
+
+  const randomKeyIndex = Math.floor(Math.random() * keys.length);
+  const randomKey = keys[randomKeyIndex];
+  console.log(randomKey);
   fetch(
-    ` http://api.airvisual.com/v2/city?city=${state_city}&state=${state_unabbreviated}&country=USA&key=641a0a1c-7768-4c72-8fa8-b0915b0ff70f
+    ` http://api.airvisual.com/v2/city?city=${state_city}&state=${state_unabbreviated}&country=USA&key=${randomKey}
     `
   )
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
       const template = `
-      <div id="text-ctnr">
-        <div id="aqius">Air Quality Index of the United States: ${data.data.current.pollution.aqius}</div>
-        <div id="mainus">Main Pollutant of the United States: ${data.data.current.pollution.mainus}</div>
-        <div id="humidity">Humidity: ${data.data.current.weather.hu}%</div>
-        <div id="hPa">hPa: ${data.data.current.weather.pr}</div>
-        <div id="temperature">Temperature: ${data.data.current.weather.tp} Celsius</div>
-        <div id="windspeed">Wind Speed: ${data.data.current.weather.ws} meters/second</div>
-        <div id="winddirection">Wind Direction: ${data.data.current.weather.wd} degrees</div>
+      <div id="state_title">
+        ${state_city}, ${state_unabbreviated}
       </div>
-      <div id="weather_icon">Weather Icon: <img src="https://www.airvisual.com/images/${data.data.current.weather.ic}.png"></img></div>
-
-      
+      <div id="Map-Item">
+        <div id="text-ctnr">
+          <div id="space"></div>
+          <div id="aqius">Air Quality Index of the United States: ${data.data.current.pollution.aqius}</div>
+          <div id="mainus">Main Pollutant of the United States: ${data.data.current.pollution.mainus}</div>
+          <div id="humidity">Humidity: ${data.data.current.weather.hu}%</div>
+          <div id="hPa">hPa: ${data.data.current.weather.pr}</div>
+          <div id="temperature">Temperature: ${data.data.current.weather.tp} Celsius</div>
+          <div id="windspeed">Wind Speed: ${data.data.current.weather.ws} meters/second</div>
+          <div id="winddirection">Wind Direction: ${data.data.current.weather.wd} degrees</div>
+        </div>
+        <div id="weather_icon">Weather Icon:</div>
+        <div id="weather_img"><img src="https://www.airvisual.com/images/${data.data.current.weather.ic}.png"></img></div>
+      </div>
         `;
-      document.querySelector("#Map-Item").innerHTML = template;
+      document.querySelector("#iqAirCtnr").innerHTML = template;
     });
 }
